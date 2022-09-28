@@ -17,12 +17,15 @@ def compute_and_plot(A):
     
     """
     # compute SVD, save columns of U and V to u1, u2 and v1, v2
-    U,S,V = svd(A)
+    U,S,Vh = svd(A)
+    print(U)
+    print(Vh)
     # guaranteed to be 2x2
-    u1 = U[0,:]
-    u2 = U[1,:]
-    v1 = V[0,:]
-    v2 = V[1,:]
+    u1 = U[:,0]
+    u2 = U[:,1]
+    # Vh is transpose!!
+    v1 = Vh[0,:]
+    v2 = Vh[1,:]
     sigma1 = S[0]
     sigma2 = S[1]
 
